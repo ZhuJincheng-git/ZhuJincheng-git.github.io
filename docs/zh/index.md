@@ -8,18 +8,18 @@ hero:
   tagline: 持续感知。
   actions:
     - theme: brand
-      text: Explore
+      text: 探索
       link: /posts/first-post
     - theme: alt
       text: GitHub
       link: https://github.com/ZhuJincheng-git/
 
 features:
-  - title: "0x01. Computing & Intelligence"
-    details: "Deep Learning, Reinforcement Learning, and autonomous AI agents. Turning mathematical formulas into running computation graphs."
-  - title: "0x02. Molecular & Materials"
-    details: "Chemical informatics, spectral analysis, and structured lab synthesis. Where physical laws meet digital standardization."
-  - title: "0x03. Core Architecture"
-    details: "Building high-performance utilities using Go, TypeScript, and minimalist 3D visualization. Absolute control over system entropy."
+  - title: "0x01. 计算与智能"
+    details: "深度学习、强化学习与自主AI智能体。将数学公式转化为可运行的计算图。"
+  - title: "0x02. 分子与材料"
+    details: "化学信息学、光谱分析与结构化实验室合成。物理定律与数字化标准在此交汇。"
+  - title: "0x03. 核心架构"
+    details: "使用Go、TypeScript和极简3D可视化构建高性能工具。对系统熵的绝对控制。"
 ---
 
