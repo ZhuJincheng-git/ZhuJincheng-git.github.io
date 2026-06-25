@@ -16,4 +16,4 @@ $$
 
 ## 3. 原子世界
 
-![atom-world](assets/atom-world.png)
+![atom-world](/images/atom-world.png)

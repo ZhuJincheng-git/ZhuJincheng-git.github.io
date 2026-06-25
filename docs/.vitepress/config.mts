@@ -1,5 +1,5 @@
-import { defineConfig } from "vitepress";
 import mathjax3 from "markdown-it-mathjax3";
+import { defineConfig } from "vitepress";
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -26,14 +26,14 @@ export default defineConfig({
       lang: "en",
       themeConfig: {
         nav: [
-          { text: "Blog", link: "/posts/first-post" },
+          { text: "Blog", link: "/posts/first-blog" },
           { text: "GitHub", link: "https://github.com/ZhuJincheng-git" },
         ],
         sidebar: {
           "/posts/": [
             {
               text: "Log",
-              items: [{ text: "01. My First Post", link: "/posts/first-post" }],
+              items: [{ text: "01. First Post", link: "/posts/first-post" }],
             },
           ],
         },
@@ -45,12 +45,12 @@ export default defineConfig({
       lang: "zh-CN",
       link: "/zh/",
       themeConfig: {
-        nav: [{ text: "文章", link: "/zh/posts/first-post" }],
+        nav: [{ text: "文章", link: "/zh/posts/first-blog" }],
         sidebar: {
           "/zh/posts/": [
             {
               text: "日志",
-              items: [{ text: "01. 我的第一篇文章", link: "/zh/posts/first-post" }],
+              items: [{ text: "01. 第一篇文章", link: "/zh/posts/first-post" }],
             },
           ],
         },
