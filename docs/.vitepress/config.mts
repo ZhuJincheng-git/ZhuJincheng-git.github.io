@@ -26,7 +26,7 @@ export default defineConfig({
       lang: "en",
       themeConfig: {
         nav: [
-          { text: "Blog", link: "/posts/first-blog" },
+          { text: "Blog", link: "/posts/first-post" },
           { text: "GitHub", link: "https://github.com/ZhuJincheng-git" },
         ],
         sidebar: {
@@ -45,7 +45,7 @@ export default defineConfig({
       lang: "zh-CN",
       link: "/zh/",
       themeConfig: {
-        nav: [{ text: "文章", link: "/zh/posts/first-blog" }],
+        nav: [{ text: "文章", link: "/zh/posts/first-post" }],
         sidebar: {
           "/zh/posts/": [
             {
