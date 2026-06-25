@@ -5,21 +5,21 @@ layout: home
 hero:
   name: "Jack Zhu"
   text: "What I See"
-  tagline: My great project tagline
+  tagline: Continuous perception.
   actions:
     - theme: brand
-      text: Markdown Examples
-      link: /markdown-examples
+      text: Explore
+      link: /posts/first-post
     - theme: alt
-      text: API Examples
-      link: /api-examples
+      text: GitHub
+      link: https://github.com/ZhuJincheng-git/
 
 features:
-  - title: Feature A
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature B
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature C
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+  - title: "0x01. Computing & Intelligence"
+    details: "Deep Learning, Reinforcement Learning, and autonomous AI agents. Turning mathematical formulas into running computation graphs."
+  - title: "0x02. Molecular & Materials"
+    details: "Chemical informatics, spectral analysis, and structured lab synthesis. Where physical laws meet digital standardization."
+  - title: "0x03. Core Architecture"
+    details: "Building high-performance utilities using Go, TypeScript, and minimalist 3D visualization. Absolute control over system entropy."
 ---
 
