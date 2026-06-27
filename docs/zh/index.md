@@ -15,11 +15,142 @@ hero:
       link: https://github.com/ZhuJincheng-git/
 
 features:
-  - title: "0x01. 计算与智能"
-    details: "深度学习、强化学习与自主AI智能体。将数学公式转化为可运行的计算图。"
-  - title: "0x02. 分子与材料"
-    details: "化学信息学、光谱分析与结构化实验室合成。物理定律与数字化标准在此交汇。"
-  - title: "0x03. 核心架构"
-    details: "使用Go、TypeScript和极简3D可视化构建高性能工具。对系统熵的绝对控制。"
+  - title: "计算"
+    details: "深度学习、强化学习与智能体。"
+  - title: "材料"
+    details: "结构筛选、光谱分析与分子合成。"
+  - title: "架构"
+    details: "追求易拓展、长寿命的程序架构。"
+  - title: "提问"
+    details: "持续地寻找好问题。"
 ---
 
+<script setup>
+import { ref, onMounted, onUnmounted } from 'vue';
+
+const quotes = [
+  "不要急着学习有用的东西，先看看什么愚蠢的问题还没有解决",
+  "代码跑不通？不会放弃，会debug",
+  "信息是行动的副产品，不是行动的前提。",
+  "判断力，是把正确的信息放到正确的地方的能力",
+  "把风险当成\"做事的成本\"，你会评估值不值，而不是敢不敢。"
+];
+
+const currentQuote = ref(quotes[0]);
+const phase = ref('hidden');
+
+// 显式声明所有定时器句柄
+let clockTimer = null;
+let leaveTimer = null;
+let enterTimer = null;
+let initTimer = null;
+
+function rotateQuote() {
+  phase.value = 'leave';
+  
+  // 记录离场定时器
+  leaveTimer = setTimeout(function() {
+    phase.value = 'hidden';
+    
+    let nextQuote = currentQuote.value;
+    while (nextQuote === currentQuote.value) {
+      const randomIndex = Math.floor(Math.random() * quotes.length);
+      nextQuote = quotes[randomIndex];
+    }
+    currentQuote.value = nextQuote;
+    
+    // 记录入场定时器
+    enterTimer = setTimeout(function() {
+      phase.value = 'enter';
+    }, 150);
+    
+  }, 2200);
+}
+
+onMounted(function() {
+  // 记录初始化定时器
+  initTimer = setTimeout(function() {
+    phase.value = 'enter';
+  }, 100);
+  
+  clockTimer = setInterval(rotateQuote, 10000);
+});
+
+// 清理
+onUnmounted(function() {
+  if (clockTimer) clearInterval(clockTimer);
+  if (leaveTimer) clearTimeout(leaveTimer);
+  if (enterTimer) clearTimeout(enterTimer);
+  if (initTimer) clearTimeout(initTimer);
+});
+</script>
+
+<div class="breathing-quote-stage">
+  <div class="particle-sentence">
+    <span 
+      v-for="(char, index) in currentQuote" 
+      :key="currentQuote + '-' + index"
+      :class="['fluid-char', 'state-' + phase]"
+      :style="{
+        '--delay-enter': `${index * 0.04}s`, 
+        '--delay-leave': `${(currentQuote.length - index) * 0.03}s`
+      }"
+    >
+      {{ char }}
+    </span>
+  </div>
+</div>
+
+<style scoped>
+.breathing-quote-stage {
+  max-width: 800px;
+  margin: 70px auto 30px;
+  padding: 0 24px;
+  min-height: 64px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+}
+.particle-sentence {
+  font-family: var(--vp-font-family-mono);
+  font-size: 0.95em;
+  font-style: italic;
+  color: var(--vp-c-text-2);
+  line-height: 1.8;
+  letter-spacing: 0.04em;
+  display: inline-block;
+  white-space: normal;
+  word-break: break-all;
+}
+.fluid-char {
+  display: inline-block;
+  white-space: pre; 
+  will-change: transform, opacity, filter;
+}
+.fluid-char.state-hidden {
+  opacity: 0;
+  transform: translateY(22px) translateX(0);
+  filter: blur(2px);
+  transition: none; 
+}
+.fluid-char.state-enter {
+  opacity: 1;
+  transform: translateY(0) translateX(0);
+  filter: blur(0px);
+  transition-property: transform, opacity, filter;
+  transition-duration: 0.9s;
+  transition-delay: var(--delay-enter);
+  transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+}
+.fluid-char.state-leave {
+  opacity: 0;
+  transform: translateY(-26px) translateX(18px); 
+  filter: blur(4px); 
+  transition-property: transform, opacity, filter;
+  transition-duration: 0.8s;
+  transition-delay: var(--delay-leave);
+  transition-timing-function: cubic-bezier(0.32, 0, 0.67, 0); 
+}
+</style>
