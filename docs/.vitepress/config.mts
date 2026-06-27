@@ -36,6 +36,7 @@ export default defineConfig({
               items: [{ text: "01. First Post", link: "/posts/first-post" }],
             },
           ],
+          "/": []
         },
       },
     },
@@ -53,6 +54,7 @@ export default defineConfig({
               items: [{ text: "01. 第一篇文章", link: "/zh/posts/first-post" }],
             },
           ],
+          "/zh/": []
         },
       },
     },
