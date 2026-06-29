@@ -147,7 +147,6 @@ onBeforeUnmount(() => {
   justify-content: center;
   align-items: center;
   text-align: center;
-  overflow: hidden;
 }
 .particle-sentence {
   font-family: var(--vp-font-family-mono);
